@@ -1,0 +1,22 @@
+/* V9: analogue production instrument + legibility options */
+.forge-advisor{padding:14px 16px 16px;background:#202923;border-bottom:1px solid #5d614d;border-top:1px solid #747151;color:#e8e9df}
+.forge-advisor[hidden]{display:none!important}
+.advisor-kicker{font-family:ui-monospace,Consolas,monospace;font-size:10px;letter-spacing:.15em;color:#d2bb87;display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
+.advisor-kicker span{color:#b8c4ba;letter-spacing:.04em}
+.advisor-title{display:block;font-size:14px;font-weight:650;margin-bottom:6px}
+.forge-advisor p{font-size:12px;line-height:1.7;color:#bbc4bc;margin:0 0 10px}
+.forge-advisor b{color:#e8d9af;font-variant-numeric:tabular-nums}
+.advisor-footer{display:flex;align-items:center;justify-content:space-between;gap:7px;color:#c8b387;font-size:11px;line-height:1.5}
+.advisor-buy{background:#bca47d;color:#161b18;padding:10px 11px;min-height:43px;min-width:132px;border:1px solid #dcc494;border-radius:2px;font-weight:650;font-size:11px;cursor:pointer}
+.advisor-buy:hover:not(:disabled){background:#dfc99e}.advisor-buy:disabled{background:#38433c;border-color:#536054;color:#aeb9a8;cursor:not-allowed}
+.focus-picker{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:12px;margin-top:12px;border-top:1px solid #4c5c4e;font-size:11px;color:#d6e0d4}
+.focus-picker select{max-width:75%;min-width:130px;background:#111b18;border:1px solid #667567;color:#f4ecdb;padding:9px 7px;font-size:11px;border-radius:1px}
+body.large-text{font-size:110%}body.large-text .facility-info,body.large-text .panel-description,body.large-text .tiny,body.large-text .guide-step p,body.large-text .research-row p{font-size:13px!important;line-height:1.75}
+body.large-text .facility-top strong,body.large-text .advisor-title{font-size:16px!important}
+body.high-contrast{--muted:#e4e6db;--edge:#8c9a8e}body.high-contrast .tiny,body.high-contrast .panel-description,body.high-contrast .facility-info,body.high-contrast .guide-step p{color:#ebede1!important}
+body.high-contrast .card,body.high-contrast .facility,body.high-contrast .research-row{border-color:#87978a!important}
+body.high-contrast button:disabled{color:#c9d0c8!important;opacity:1!important}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #d8bb7c!important;outline-offset:3px}
+@media(max-width:760px){.forge-advisor{padding:12px 15px}.advisor-buy{min-height:45px}.focus-picker select{max-width:67%}}
+@media(max-width:390px){.advisor-footer{align-items:stretch;flex-direction:column}.advisor-buy{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

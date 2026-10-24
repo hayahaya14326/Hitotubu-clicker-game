@@ -1,0 +1,189 @@
+/* INFINITY FORGE / Observatory visual system — V5
+   Direction: an instrument, not a generic dashboard.
+   Quiet panels, editorial typography, analogue graduation marks,
+   a single luminous object in a largely unlit observatory. */
+:root{
+ color-scheme:dark;
+ --bg:#101517;--surface:#171d1f;--surface2:#1e2627;--edge:#374346;
+ --fg:#eeebe4;--muted:#a9b3b1;--accent:#b5d3be;--gold:#d9b477;
+ --ok:#9dc9a8;--red:#e0a092;--shadow:none;
+}
+html,body{background:#101517;color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,'Noto Sans JP','Hiragino Kaku Gothic ProN',Meiryo,sans-serif}
+body{background-image:none}
+.app{max-width:1640px;padding:20px 26px 38px}
+.top{padding:0 0 19px;border-bottom:1px solid #3c4744;margin-bottom:15px}
+.brand-symbol{width:47px;height:47px;transform:none;border-radius:1px;border:1px solid #b9b5a4;background:#202a29;box-shadow:none}
+.brand-symbol span{font-family:Georgia,serif;font-weight:700;color:#e7dfcf;font-size:20px;letter-spacing:-3px;transform:none;filter:none;padding-right:4px}
+.brand{gap:15px}.brand-title{gap:1px}.brand-kicker{font-size:9px;letter-spacing:2.1px;color:#a9b6a9}
+.brand strong{font-family:Georgia,'Times New Roman',serif;font-weight:600;font-size:27px;letter-spacing:2px}
+.brand strong em{color:#d9c5a1;font-style:normal}
+.brand small{color:#b2b7b0;font-size:10px;letter-spacing:1px}
+.version{border:0;border-left:1px solid #59665e;padding:0 0 0 9px;border-radius:0;color:#929f96;letter-spacing:.8px;font-weight:500}
+.icon-btn{height:37px;border-radius:2px;border:1px solid #404e4e;background:transparent;color:#d5d6cc;box-shadow:none;font-weight:500}
+.icon-btn:hover{background:#252f2e;border-color:#a5aa99}
+.online-pill{color:#a0b8a7}.status-dot{background:#adc1a6;box-shadow:none}
+.resourcebar{gap:0;margin-bottom:17px;border:1px solid #3a4945;background:#171f20;display:flex;align-items:stretch;flex-wrap:wrap}
+.resource{flex:1;min-width:165px;padding:11px 21px;border:0;border-right:1px solid #34413f;border-radius:0;background:transparent;box-shadow:none}
+.resource:last-child{border-right:0}
+.resource:before{display:none}
+.resource.hero-resource{background:#202926;border:0;border-right:1px solid #394841}
+.resource small{color:#aab5af;font-weight:500;font-size:10px;letter-spacing:.05em}
+.resource-icon{color:#cdb789}.resource strong{color:#f2eee6;font-weight:650;font-family:'SFMono-Regular',Consolas,monospace;font-size:23px;letter-spacing:-1px}
+.hero-resource strong{color:#e8d3a7}
+.layout{grid-template-columns:minmax(250px,25%) minmax(360px,1fr) minmax(270px,26%);gap:13px}
+.card,.modal{background:#171d1f;border:1px solid #384344;border-radius:3px;box-shadow:none}
+.left-panel,.right-panel{min-height:610px;max-height:calc(100vh - 174px)}
+.panel-header{padding:17px 16px;background:#1d2526;border-bottom:1px solid #3c4747}
+.eyebrow{font-weight:600;font-size:10px;color:#c5c7b9;letter-spacing:1.4px}
+.eyebrow-dot{background:#c4ad80;border-radius:0}
+h2{font-family:Georgia,'Noto Serif JP',serif;font-size:22px;font-weight:500}
+h1{font-family:Georgia,'Noto Serif JP',serif;font-weight:500}
+h3{font-weight:600}
+.panel-description{color:#a6b2ae;font-size:11px}
+.buy-mode label{color:#a5b0ab}
+.buy-mode select{color:#e9e7dc;background:#222d2c;border-color:#53615e;border-radius:2px}
+.facility-list{gap:0;padding:0}
+.facility{padding:13px 17px;border:0;border-bottom:1px solid #344143;border-radius:0;background:#171d1f}
+.facility::before{display:none}
+.facility:hover{background:#232d2d}
+.facility-top strong{color:#f0eee7;font-weight:650}
+.facility-info,.item-sub{color:#b5c0b7}
+.cost{color:#ddc69a!important}
+.count{color:#aeb9b0!important;border-radius:2px!important;background:#27312f!important;border-color:transparent!important}
+.buy-btn,.action,.mission-action{border-radius:2px!important;background:#d3b889!important;color:#141a1b!important;border:1px solid #ddc398!important;box-shadow:none!important;font-weight:700}
+.buy-btn:not(:disabled):hover,.action:not(:disabled):hover,.mission-action:hover{background:#e7cda2!important}
+.buy-btn:disabled,.action:disabled{background:#2b3433!important;color:#9ea9a5!important;border-color:#374240!important;opacity:1}
+.panel-bottom{border-top:0;color:#929f97}
+.stage{min-height:525px;padding:20px 26px 22px;isolation:isolate;border-color:#56504a!important;background:#141719!important;overflow:hidden}
+.stage:before{content:'';inset:10px;border:1px solid rgba(207,191,156,.23);pointer-events:none;border-radius:0;position:absolute;z-index:1}
+.stage:after{opacity:.3!important}
+.stage .starfield{opacity:.6}
+.stage .nebula{opacity:.25!important}
+.stage-label{border-bottom:1px solid #504e45;padding-bottom:11px;position:relative;z-index:4;color:#cfbd9b;font-size:11px}
+.stage .stage-code{color:#928d7d}
+.focus-toggle{color:#d3c3a0;border-color:#686050;background:rgba(16,21,23,.85);border-radius:2px;padding:5px 9px}
+.focus-toggle:hover,.focus-toggle[aria-pressed=true]{background:#292d29;color:#f6e1b9;border-color:#bca883}
+.center-title{padding-top:23px}.center-title .eyebrow{color:#bda981!important;letter-spacing:1.6px!important}
+.center-title h1{font-family:Georgia,'Noto Serif JP',serif;font-size:clamp(27px,2.4vw,39px);font-weight:500;letter-spacing:.11em;text-shadow:none}
+.center-title p{color:#b8b7ac;line-height:1.55}
+.core-wrap{filter:saturate(.75)}
+/* The universe may glow. The controls may not. */
+.stage .core{box-shadow:0 0 40px rgba(205,175,115,.17),inset -14px -14px 28px rgba(9,10,13,.7)}
+.stage .core-inner{filter:drop-shadow(0 0 7px rgba(255,241,213,.6));font-family:Georgia,serif;font-size:46px}
+.stage .orbit,.stage .outer-ring,.stage .inner-ring{opacity:.6}
+.tap-hint{color:#d2d2c7;letter-spacing:.025em}
+.tap-dot{background:#cab590!important;box-shadow:none!important}
+.tap-value,.cosmos-whisper{color:#aab4af!important;text-shadow:none}
+.tap-value strong{color:#e6d1a4!important}
+.key-hint{background:#1d2728!important;border:1px solid #445451!important;color:#b4b8aa!important;border-radius:2px!important}
+.progress-head{color:#c7c9bd!important;font-size:11px}
+.progress-track{background:#37403b!important;border-radius:1px!important;height:5px}
+.progress-fill{border-radius:0;background:#c5aa7b!important;box-shadow:none!important}
+.mission{background:#202725;border-color:#435047;padding:17px 19px}
+.mission-chip{border-color:#6a695a;background:transparent;color:#d2bb8e;border-radius:2px}
+.mission-glyph{border-radius:1px;background:#293431;border-color:#48564f;color:#d8c9a8;box-shadow:none}
+.mission-copy p{color:#bcc4b9}
+.mission-progress span{color:#a7b2a8}
+.dashboard,.chronicle{background:#171d1f;border-color:#3d4847;padding:16px 18px}
+.chronicle-entry,.chronicle-entry.fresh{background:#1f2727;border:0;border-left:2px solid #80755b;border-bottom:1px solid #374340;border-radius:0;padding:11px}
+.chronicle-symbol{border-radius:0;background:#2a3230;border-color:#4f5e54;color:#d2bf94}
+.chronicle-entry p,.status-note{color:#adbab1}
+.stats-grid div{background:#222c2b;border:1px solid #364342;border-radius:1px}
+.stats-grid small{color:#afb9b0}
+.tabs{background:#1e2524;border-bottom:1px solid #3c4844;border-radius:0;padding:10px;gap:2px}
+.tab{border-radius:1px;padding:9px 10px;color:#aebbb0}
+.tab.active{background:#d2b88e;border-color:#d2b88e;color:#161b1b}
+.side-body{padding:19px 17px}.side-body h3{font-family:Georgia,'Noto Serif JP',serif;font-weight:500;font-size:22px}
+.tiny{color:#b6c0b7}
+.guide-hero{border-color:#535447;background:#242a28;border-radius:1px;margin:16px 0;padding:17px 12px}
+.guide-symbol{font-size:30px;color:#d7be8e;text-shadow:none}
+.guide-hero p,.guide-step p{color:#b5bdb5}
+.guide-step{border-left-color:#797b66}
+.guide-step b{background:#303b36;border-radius:0;color:#e3d3b2}
+.notice,.research-row,.skill-row{border-color:#3d4c46;background:#202928;border-radius:1px}
+.notice{color:#c2c9bd}
+.modal{background:#1b2423;border-color:#9a8a6e;border-radius:2px;box-shadow:0 20px 90px #000c}
+.modal-backdrop{background:rgba(7,10,11,.88)}
+.modal-close{border-radius:2px;background:#2d3733;color:#f1e1c5}
+.modal-art:before{border-color:#a99a75;box-shadow:none}
+.modal-art span{color:#e4d0a5;text-shadow:none}
+.toast{background:#2d382f;border:1px solid #a5ab8a;border-radius:2px;color:#f2f0e6;box-shadow:0 12px 45px #0009}
+.discovery-banner{border-radius:2px;border-color:#a4997e;background:#212925f8;box-shadow:0 18px 35px #000a}
+#discovery-glyph{color:#dcc69e;text-shadow:none}
+.discovery-banner small{color:#c7b48d}
+.discovery-banner p{color:#c2c8be}
+/* On desktops retain the production / cosmos / workbench layout. */
+@media(min-width:761px) and (max-width:1230px){.layout{grid-template-columns:minmax(220px,30%) minmax(340px,1fr)}.right-panel{max-height:none;min-height:0}}
+@media(max-width:760px){
+ html{scroll-padding-top:8px}
+ .app{padding:9px 10px calc(74px + env(safe-area-inset-bottom));max-width:520px}
+ .top{height:49px;padding:0 0 8px;margin-bottom:7px;border-color:#3b4640;gap:5px}
+ .brand{gap:8px}.brand-symbol{width:32px;height:32px}.brand-symbol span{font-size:15px;letter-spacing:-2px;padding-right:3px}
+ .brand-kicker{font-size:7px;letter-spacing:1.2px}.brand strong{font-size:17px;letter-spacing:1px}.brand small{font-size:8px;letter-spacing:.3px}
+ .version{display:none}.top-actions{gap:4px}.icon-btn{height:30px;width:30px;font-size:14px}
+ .resourcebar{display:flex;flex-wrap:nowrap;margin-bottom:8px;gap:0}
+ .resource,.resource.hero-resource{padding:7px 10px;min-width:0;min-height:50px;flex:1 1 50%;border-right:1px solid #3b4641}
+ .resource small{font-size:9px;margin-bottom:2px;white-space:nowrap;gap:3px}
+ .resource strong{font-size:clamp(16px,5vw,23px);line-height:1.13;display:block;overflow-wrap:anywhere}
+ .resource-icon,.tip-mark{display:none}
+ .resource.prestige-resource{flex-basis:100%;border-top:1px solid #3b4641}
+ .resourcebar:has(.prestige-resource:not([hidden])){flex-wrap:wrap}
+ .layout{display:flex;flex-direction:column;gap:0;align-items:stretch}
+ .center-panel{display:block;width:100%}.left-panel,.right-panel{display:none;max-height:none;min-height:0}
+ .stage{padding:12px 14px 13px;min-height:0;height:clamp(335px,53svh,430px);border-radius:2px}
+ .stage:before{inset:7px}.stage-label{padding-bottom:7px;font-size:9px}
+ .stage-code{display:none}
+ .focus-toggle{padding:5px 6px;font-size:9px}
+ .center-title{padding-top:9px}.center-title .eyebrow{font-size:8px!important;letter-spacing:1.1px!important}
+ .center-title h1{font-size:clamp(21px,6vw,29px);margin:3px 0 2px}
+ .center-title p{font-size:10px;white-space:normal;max-width:290px}
+ .core-wrap{width:250px;height:clamp(164px,25svh,210px);margin:-5px auto -13px;transform:scale(.76);transform-origin:center center}
+ .outer-ring{width:230px;height:230px}.inner-ring{width:165px;height:165px}
+ .halo{width:210px;height:210px}.halo-two{width:205px;height:205px}
+ .orbit{width:245px;height:83px}.orbit.b,.orbit.c{width:233px;height:77px}
+ .core{width:130px;height:130px}
+ .tap-hint{font-size:10px}.key-hint{display:none!important}
+ .tap-value{font-size:10px;margin-top:1px}.tap-value strong{font-size:14px}
+ .cosmos-whisper{display:none}
+ .progress-zone{margin-top:9px}.progress-head{font-size:9px;gap:4px}.progress-track{height:4px}
+ .mission{margin-top:8px;padding:10px 12px;min-height:73px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:5px 8px}
+ .mission-heading{display:none}.mission-body{padding:0;gap:8px;min-width:0}
+ .mission-glyph{width:28px;height:28px;flex-shrink:0;font-size:16px}
+ .mission-copy h3{font-size:12px;line-height:1.3}.mission-copy p{display:none}
+ .mission-foot{display:block}.mission-progress{display:none}.mission-action{min-height:32px;height:32px;padding:0 9px;font-size:10px;white-space:nowrap}
+ .mission-action span{margin-left:3px}
+ .chronicle,.dashboard{display:none}
+ /* Mobile is now a set of real screens, not a 3-column desktop page stacked vertically. */
+ body[data-mobile-view="equipment"] .left-panel{display:block;order:0;width:100%}
+ body[data-mobile-view="equipment"] .center-panel{display:none}
+ body[data-mobile-view="equipment"] .right-panel{display:none}
+ body[data-mobile-view="guide"] .left-panel{display:none}
+ body[data-mobile-view="guide"] .right-panel{display:block;order:0;width:100%}
+ body[data-mobile-view="guide"] .center-panel{display:block;order:1}
+ body[data-mobile-view="guide"] .stage,body[data-mobile-view="guide"] .mission{display:none}
+ body[data-mobile-view="guide"] .chronicle,body[data-mobile-view="guide"] .dashboard{display:block;margin-top:8px}
+ body[data-mobile-view="research"] .right-panel,body[data-mobile-view="prestige"] .right-panel,body[data-mobile-view="skills"] .right-panel,body[data-mobile-view="mini"] .right-panel{display:block;order:0;width:100%}
+ body[data-mobile-view="research"] .center-panel,body[data-mobile-view="prestige"] .center-panel,body[data-mobile-view="skills"] .center-panel,body[data-mobile-view="mini"] .center-panel{display:none}
+ .panel-header{padding:12px 13px}.panel-description{max-width:none}
+ .facility{padding:14px}.facility-list{padding:0}
+ .right-panel .tabs{display:none}
+ .side-body{padding:18px 15px}.side-body .guide-hero{padding:11px;margin:10px 0}
+ .side-body .guide-hero .guide-symbol{font-size:22px}
+ .side-body .guide-steps{gap:8px;margin:12px 0}
+ .mobile-nav{height:calc(62px + env(safe-area-inset-bottom));background:#151b1b;border-top:1px solid #91846c;backdrop-filter:none;box-shadow:0 -8px 28px #080c0dd9;padding:5px 6px calc(3px + env(safe-area-inset-bottom));gap:0}
+ .mobile-nav button{min-width:57px;padding:4px 7px;gap:2px;color:#9ba69e;border-right:1px solid #2b3633}
+ .mobile-nav button b{font-size:20px;line-height:1.2}.mobile-nav button span{font-size:10px}
+ .mobile-nav button.active{color:#ead4aa;background:#252d29;border-radius:0;border-bottom:2px solid #d6b77e}
+ .discovery-banner{top:65px}
+ .toast{bottom:calc(76px + env(safe-area-inset-bottom))}
+ .focus-mode .stage{height:calc(100svh - 185px);min-height:365px}
+ .focus-mode .core-wrap{transform:scale(.94);margin:15px auto 0}
+}
+@media(max-width:400px) and (max-height:730px){
+ .stage{height:clamp(315px,51svh,360px)}.core-wrap{transform:scale(.69);height:clamp(145px,23svh,175px);margin:-10px auto -19px}
+ .center-title h1{font-size:22px}
+ .stage-label{padding-bottom:5px}.center-title{padding-top:5px}
+ .progress-zone{margin-top:6px}
+ .mission{min-height:64px}
+}
+@media(prefers-reduced-motion:reduce){.core-wrap,.stage,.facility{transition:none!important}}

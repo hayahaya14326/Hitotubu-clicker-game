@@ -1,0 +1,63 @@
+/* Cosmic immersion — additive styles; uses only compositor-friendly effects when possible. */
+.stage {--era-rgb:104,199,255;background:radial-gradient(ellipse 80% 60% at 50% 53%,#162953 0%,#0a162c 48%,#050b1b 100%);transition:background 1.8s ease,border-color .8s ease;border-color:rgba(var(--era-rgb),.23)}
+.stage[data-era="1"]{--era-rgb:102,220,246}
+.stage[data-era="2"]{--era-rgb:114,147,255;background:radial-gradient(ellipse 82% 62% at 50% 57%,#172d5d 0%,#0d1630 49%,#050b1b 100%)}
+.stage[data-era="3"]{--era-rgb:255,193,119;background:radial-gradient(ellipse 75% 56% at 50% 54%,#48304e 0%,#131b37 52%,#080a1c 100%)}
+.stage[data-era="4"]{--era-rgb:173,130,255;background:radial-gradient(ellipse 78% 66% at 50% 54%,#31235d 0%,#11142f 54%,#080918 100%)}
+.stage[data-era="5"]{--era-rgb:111,255,215;background:radial-gradient(ellipse 75% 65% at 50% 54%,#17474b 0%,#112638 50%,#06101c 100%)}
+.stage[data-era="6"]{--era-rgb:242,155,255;background:radial-gradient(ellipse 75% 65% at 50% 54%,#432458 0%,#21183c 51%,#0b0a20 100%)}
+#cosmos-canvas{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.98}
+#cosmos-flash{position:absolute;inset:-30%;z-index:3;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 50%,#fff 0%,rgba(var(--era-rgb),.68) 15%,rgba(var(--era-rgb),0) 55%)}
+#cosmos-flash.play{animation:cosmosBurst 1.5s ease-out both}
+.center-title{z-index:2;position:relative;max-width:520px}
+.center-title h1{font-size:clamp(23px,2.5vw,35px);letter-spacing:.08em;text-shadow:0 0 34px rgba(var(--era-rgb),.29),0 2px 10px #0018}
+.center-title .eyebrow{letter-spacing:3px;color:rgba(var(--era-rgb),.8)}
+.center-title p{max-width:440px;margin-inline:auto}
+.core-wrap{z-index:2}
+.stage .core{border-color:rgba(var(--era-rgb),.76);box-shadow:0 0 8px rgba(var(--era-rgb),.6),0 0 45px rgba(var(--era-rgb),.35),0 0 120px rgba(var(--era-rgb),.21),inset -16px -19px 36px #00142d}
+.stage .core:focus-visible{outline:3px solid #fff;outline-offset:8px}
+.stage .core-inner{filter:drop-shadow(0 0 22px rgba(var(--era-rgb),.75))}
+.stage .stage-code{color:rgba(var(--era-rgb),.76)}
+.cosmos-whisper{position:relative;z-index:2;font-size:11px;line-height:1.65;letter-spacing:.035em;color:#bdd6ee;text-align:center;padding:0 10px 6px;max-width:440px;text-shadow:0 1px 6px #0009}
+.progress-zone{position:relative;z-index:2}
+.sound-toggle[aria-pressed="true"]{background:linear-gradient(120deg,#16394d,#1b3b56);border-color:#39788a;color:#abfff0}
+.chronicle{padding:17px 20px 18px;background:linear-gradient(140deg,#101f36,#101a2d);border-color:#385274}
+.chronicle-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.chronicle-heading h2{margin:2px 0;font-size:16px;letter-spacing:.04em}
+.chronicle-items{display:grid;gap:8px;max-height:228px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#31536a transparent}
+.chronicle-entry{display:flex;align-items:flex-start;gap:10px;padding:11px;border:1px solid #2c425e;border-radius:11px;background:#111f35b8}
+.chronicle-entry.fresh{border-color:#427a87;background:linear-gradient(100deg,#173a46,#132138)}
+.chronicle-symbol{flex-shrink:0;border:1px solid #426e84;background:#18394b;color:#a8f8f6;font-size:21px;display:grid;place-items:center;width:38px;height:38px;border-radius:10px}
+.chronicle-entry strong{font-size:12px;color:#e3f4ff}
+.chronicle-entry p{margin-top:2px;color:#9bbbd2;font-size:11px;line-height:1.6}
+.discovery-banner{position:fixed;z-index:29;right:22px;top:105px;width:min(355px,calc(100vw - 24px));padding:19px;display:flex;align-items:center;gap:14px;border:1px solid #77aeca;border-radius:16px;background:linear-gradient(125deg,#173551f5,#0e1e35f5);box-shadow:0 24px 80px #000a,inset 0 0 30px #53b9e514;backdrop-filter:blur(18px);pointer-events:none}
+.discovery-banner[hidden],#chronicle-panel[hidden]{display:none!important}
+.discovery-banner.enter{animation:discoverIn .45s cubic-bezier(.2,.9,.1,1) both}
+#discovery-glyph{font-size:39px;color:#bbffff;text-shadow:0 0 24px #41c9e1}
+.discovery-banner small{display:block;color:#78cfe3;font-size:10px;letter-spacing:2px;margin-bottom:3px}
+.discovery-banner strong{display:block;font-size:18px;color:#fff;letter-spacing:.05em}
+.discovery-banner p{font-size:11px;color:#bad2e4;margin-top:4px;line-height:1.5}
+#cinematic-burst{pointer-events:none;position:fixed;z-index:28;inset:0;opacity:0}
+@keyframes discoverIn{from{opacity:0;transform:translateY(-22px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes cosmosBurst{0%{opacity:0;transform:scale(.7)}18%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.42)}}
+@media(max-width:760px){.stage{min-height:505px}.cosmos-whisper{font-size:10px;margin-top:3px}.discovery-banner{top:94px;right:10px;padding:13px 15px;width:min(340px,calc(100vw - 20px))}.discovery-banner strong{font-size:15px}#discovery-glyph{font-size:30px}.chronicle{padding:14px}.center-title h1{font-size:24px}.center-title .eyebrow{font-size:9px;letter-spacing:1.5px}.sound-toggle{min-width:34px}}
+@media(prefers-reduced-motion:reduce){#cosmos-flash.play,.discovery-banner.enter{animation:none!important}.center-title,.stage{transition:none!important}}
+.low-fx #cosmos-flash{display:none}
+
+/* The reactor itself evolves with the cosmos. */
+.stage[data-era="2"] .core{background:radial-gradient(circle at 38% 30%,#faf9ff 0%,#dae9ff 11%,#899beb 27%,#5659bc 48%,#26265a 72%,#08102c 100%)}
+.stage[data-era="3"] .core{background:radial-gradient(circle at 37% 27%,#fffdf4 0%,#fff7c5 11%,#ffca7c 29%,#d47b5d 49%,#522c4c 75%,#130f2a 100%);border-color:#ffe0a4}
+.stage[data-era="3"] .halo,.stage[data-era="3"] .orbit{filter:sepia(.25) hue-rotate(-13deg)}
+.stage[data-era="4"] .core{background:radial-gradient(circle at 36% 28%,#ffffff 0%,#e9e2ff 11%,#b99bff 28%,#7459ce 49%,#38246b 76%,#140b29 100%);border-color:#c9adff}
+.stage[data-era="5"] .core{background:radial-gradient(circle at 36% 27%,#fff 0%,#e3fff7 9%,#9cfbdd 25%,#40a99e 46%,#1b4e60 75%,#071526 100%);border-color:#a3ffdf}
+.stage[data-era="6"] .core{background:radial-gradient(circle at 36% 27%,#fff 0%,#fce1ff 11%,#e4a1f3 28%,#9468c9 49%,#45266c 74%,#150a2c 100%);border-color:#ffcaff}
+.focus-toggle{font-family:inherit;border:1px solid #396481;border-radius:9px;padding:5px 9px;background:#0a1b30ac;color:#a4d9f0;letter-spacing:.04em;font-size:10px;white-space:nowrap;cursor:pointer}
+.focus-toggle:hover,.focus-toggle[aria-pressed="true"]{color:#e3fbff;border-color:#70bdd3;background:#1b475c}
+.focus-toggle:focus-visible{outline:2px solid #d6ffff;outline-offset:3px}
+.focus-mode .layout{display:block;max-width:1320px;margin:auto}
+.focus-mode #equipment-panel,.focus-mode #menu-panel,.focus-mode .mission,.focus-mode .chronicle,.focus-mode .dashboard{display:none!important}
+.focus-mode .center-panel{width:100%;max-width:none}
+.focus-mode .stage{min-height:min(80vh,850px)}
+.focus-mode .core-wrap{transform:scale(1.22);margin:30px auto}
+.focus-mode .center-title h1{font-size:clamp(25px,3vw,45px)}
+@media(max-width:760px){.focus-toggle{padding:4px 5px;font-size:9px}.stage-code{display:none}.focus-mode .stage{min-height:calc(100svh - 240px)}.focus-mode .core-wrap{transform:scale(1.03);margin:0 auto}.focus-mode .center-title h1{font-size:26px}}

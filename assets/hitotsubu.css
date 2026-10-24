@@ -1,0 +1,193 @@
+/* HITOTSUBU v13 — editorial, tactile interface. Color belongs to the game world,
+   not to interface chrome. These are presentation overrides, not economy changes. */
+:root{color-scheme:light;--bg:#f5f3ec;--surface:#fcfaf4;--surface2:#edeee5;--edge:#d4d7cd;--fg:#26342f;--muted:#58675f;--accent:#b95d41;--gold:#b95d41;--ok:#416f59;--red:#b54d41;--shadow:none}
+html,body{background:#f5f3ec!important;color:#26342f!important;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif!important;letter-spacing:0!important}
+body{background-image:linear-gradient(#d7dcd422 1px,transparent 1px),linear-gradient(90deg,#d7dcd422 1px,transparent 1px)!important;background-size:26px 26px!important}
+.app{max-width:1590px;padding:23px 30px 45px}
+.top{padding:0 0 17px;border-bottom:1px solid #bdc6ba;margin-bottom:17px;min-height:61px}
+.brand{gap:12px}.brand-symbol{width:46px;height:46px;border:1px solid #c6d2c7;background:#e4e9de;border-radius:50%;box-shadow:none;transform:none}
+.brand-symbol span{color:#b7593b;font-size:23px!important;letter-spacing:0!important;line-height:1;padding:0!important;transform:none;filter:none}
+.brand-title{gap:2px}.brand-kicker{font-size:10px;letter-spacing:.08em;color:#66776b;font-weight:500}
+.brand strong{font-family:inherit;font-size:27px;letter-spacing:.06em;color:#293a32;font-weight:760;line-height:1.2}
+.brand small{font-size:11px;letter-spacing:.06em;color:#647368;font-weight:400}
+.brand strong em{color:inherit}.version{display:none}
+.top-actions{gap:7px;align-items:center}
+.online-pill{font-size:11px;color:#647368}.status-dot{background:#49745c}
+.icon-btn,.soundtrack-switch{background:#fcfaf4!important;border:1px solid #cdd5c9!important;border-radius:5px!important;color:#35483e!important;font-size:12px;box-shadow:none!important;min-height:36px}
+.icon-btn:hover{background:#e7eee3!important;border-color:#98aa9b!important}.icon-btn:focus-visible{outline-color:#b65a3c}
+.soundtrack-volume{color:#506658!important;font-size:11px}
+.soundtrack-volume input{accent-color:#a85037}
+.resourcebar{background:#fffdf8!important;border:1px solid #d0d6ca!important;border-radius:7px;gap:0;margin-bottom:18px;overflow:hidden;box-shadow:none}
+.resource,.resource.hero-resource{border:0!important;border-right:1px solid #d0d6ca!important;border-radius:0!important;min-height:79px;background:transparent!important;padding:13px 24px;box-shadow:none!important}
+.resource:last-child{border-right:0!important}.resource:before{display:none!important}
+.resource small{font-size:11px;color:#627467!important;letter-spacing:0!important;margin-bottom:6px}
+.resource-icon{color:#b8573d!important}.resource strong,.hero-resource strong{color:#20372c!important;font-family:ui-monospace,'Cascadia Code',Consolas,monospace!important;font-size:27px;letter-spacing:-.04em;font-weight:700}
+.refresh-info{color:#77857d!important}
+.layout{grid-template-columns:minmax(256px,25%) minmax(370px,1fr) minmax(285px,25%);gap:13px;align-items:start}
+.card,.left-panel,.right-panel,.dashboard,.chronicle,.modal{background:#fffdf8!important;border:1px solid #d1d8cb!important;border-radius:6px!important;box-shadow:none!important;color:#26342f}
+.left-panel,.right-panel{min-height:620px;max-height:calc(100svh - 185px)}
+.panel-header{background:#fffdf8!important;border-bottom:1px solid #d6dacf;padding:18px 18px 15px}
+.eyebrow,.section-heading .eyebrow{color:#ab5337!important;font-size:10px!important;letter-spacing:.11em!important;font-weight:700}
+h1,h2,h3,.side-body h3,.astro-view>h3{font-family:inherit!important;color:inherit!important;font-weight:730!important;letter-spacing:.01em!important}
+h2{font-size:21px!important}h3{font-size:17px}
+.panel-description,.tiny,.item-sub,.facility-info,.guide-step p,.notice,.mission-copy p,.mission-progress span{color:#617269!important;line-height:1.55!important}
+.buy-mode label{color:#5d6c61!important}
+.buy-mode select,select,.focus-picker select{background:#f5f4ec!important;color:#2f4337!important;border:1px solid #c5ccbf!important;border-radius:4px!important}
+.facility-list{background:#fffdf8!important}.facility{background:#fffdf8!important;border:0!important;border-bottom:1px solid #e0e4d9!important;border-radius:0!important;padding:18px!important;color:#25362c}
+.facility:before{display:none!important}.facility:hover{background:#f4f6ee!important}.facility-top strong{color:#273b30!important;font-size:14px;font-weight:700}
+.facility-info,.item-sub{color:#67776b!important}.cost{color:#a74d35!important;font-weight:600}.count{background:#edf0e8!important;color:#42564a!important;border:0!important;border-radius:3px!important}
+.buy-btn,.action,.mission-action,.advisor-buy{background:#b4563e!important;color:white!important;border:1px solid #b4563e!important;border-radius:5px!important;box-shadow:none!important;min-height:41px;transition:background .12s ease!important}
+.buy-btn:not(:disabled):hover,.action:not(:disabled):hover,.mission-action:hover,.advisor-buy:hover:not(:disabled){background:#933f2c!important;color:white!important}
+.buy-btn:disabled,.action:disabled,.advisor-buy:disabled{background:#e9ece5!important;color:#7b887d!important;border-color:#e0e3d9!important;opacity:1}
+.action.secondary{background:#f4f4eb!important;color:#3c5346!important;border:1px solid #becabb!important}
+.panel-bottom{color:#708073!important;background:#f7f7f1!important;border-top:1px solid #dee3d8;font-size:11px;padding:15px 17px}
+.forge-advisor{background:#edf0e7!important;color:#2d4034!important;border-bottom:1px solid #c9d2c5!important;border-top:0;padding:15px}
+.advisor-kicker{color:#af553c!important}.advisor-kicker span,.forge-advisor p,.advisor-footer{color:#526c5e!important}
+.advisor-title,.forge-advisor b{color:#2c4537!important}
+/* The physical play area is a dark inset, not a blue-glow dashboard. */
+.stage{background:#192b2d!important;border:1px solid #1c3336!important;border-radius:6px!important;min-height:548px;padding:19px 21px 22px;color:#edf0e8!important}
+.stage:before{inset:0!important;border:0!important;content:none!important}.stage:after{display:none!important}
+.stage .nebula{opacity:.05!important}.stage .starfield{opacity:.26!important}
+.stage-label{width:100%;position:relative;z-index:4;border-bottom:1px solid #60706b55;padding-bottom:11px;color:#bdcbbd!important;letter-spacing:0;font-size:11px}
+.stage .stage-code{color:#94a99b!important;letter-spacing:.08em}
+.focus-toggle{background:transparent!important;color:#d7e2d5!important;border:1px solid #869b8a88!important;border-radius:4px;padding:5px 9px;box-shadow:none!important}
+.center-title{align-self:stretch;text-align:left!important;padding:19px 10px 0!important;z-index:4}
+.center-title .eyebrow{color:#b7c5b7!important;font-family:ui-monospace,Consolas,monospace;letter-spacing:.04em!important;font-weight:500}
+.center-title h1{color:#f3f1e7!important;text-shadow:none!important;font-size:clamp(24px,2.4vw,32px);margin:9px 0 7px!important;letter-spacing:.04em!important}
+.center-title p{color:#b5c7ba!important;font-size:12px;max-width:370px;line-height:1.65}
+.core-wrap{filter:none!important}
+.radiance,.halo,.outer-ring,.inner-ring,.orbit,.orbit-node{opacity:.12!important;animation:none!important;box-shadow:none!important;filter:none!important}
+.core-wrap .radiance{background:none!important}.core-wrap .halo{border-color:#8eac9699!important}
+.stage .core{background:radial-gradient(circle at 30% 27%,#eec49a 0%,#d38259 43%,#b25d40 75%,#833e2c 100%)!important;border:2px solid #f4c9a1!important;box-shadow:0 0 0 9px #ce896513,0 0 0 30px #ce896509,inset -8px -10px 15px #652d2688!important;animation:none!important;transition:transform .12s ease,box-shadow .2s ease}
+.stage .core:active{transform:scale(.94)}
+.core-shine{display:none!important}.stage .core-inner{font-size:14px!important;color:#fff0d7!important;filter:none!important;text-shadow:none!important;line-height:1}
+.tap-hint{color:#c6d2c5!important;font-size:12px;letter-spacing:0}.tap-dot{background:#df9973!important}
+.key-hint{background:transparent!important;color:#cfdbc9!important;border-color:#809489!important}
+.tap-value{color:#cfdfd1!important}.tap-value strong{color:#f0bc9b!important}
+.workshop-status{background:transparent!important;border:1px solid #b7c4b055!important;color:#c6d5c7!important;box-shadow:none!important;border-radius:3px!important}
+.cosmos-whisper{color:#b7c8b6!important}.progress-head{color:#c3d0c4!important}.progress-track{background:#60726366!important;height:4px!important;border-radius:3px!important}.progress-fill{background:#dc9273!important;border-radius:3px!important}
+.mission{background:#fffdf8!important;border:1px solid #cdd6c9!important;padding:16px 19px;margin-top:11px;border-left:4px solid #b4563e!important}
+.mission-heading .eyebrow{color:#a64f37!important}.mission-chip{background:#f3ece6!important;color:#ac553c!important;border:0!important;border-radius:3px!important}
+.mission-glyph{background:#f0e9de!important;color:#b2573f!important;border:0!important;box-shadow:none!important;border-radius:4px!important}
+.mission-copy h3{color:#29392d!important}.mission-copy p{color:#66786c!important}
+.dashboard,.chronicle{background:#fffdf8!important}.stats-grid div{background:#f5f6ee!important;border:1px solid #e2e6dc!important;border-radius:3px!important}.stats-grid small{color:#617265!important}.stats-grid strong{color:#2e4336!important}.status-note{color:#68766b!important}
+.chronicle-entry,.chronicle-entry.fresh{background:#f7f8f0!important;border-bottom:1px solid #e0e7dc!important;border-left:2px solid #b65c45!important;color:#26342f}
+.chronicle-symbol{color:#b95d41!important;background:#f0e9de!important;border:0}
+.right-panel{scrollbar-color:#c5cdc0 transparent}
+.tabs{background:#f4f5ed!important;border-bottom:1px solid #d4dccf!important;border-radius:6px 6px 0 0!important;padding:8px}
+.tab{color:#627669!important;background:transparent!important;border:1px solid transparent!important;border-radius:4px!important;font-size:12px}
+.tab.active{background:#e2e9dd!important;color:#254334!important;border-color:#cbd8c9!important;font-weight:750}
+.side-body{background:#fffdf8!important;color:#26342f;padding:22px 20px}
+.side-body h3{color:#263b2d!important;font-size:21px!important}.guide-hero{background:#edf2e9!important;border:0!important;border-radius:4px!important;padding:17px!important}
+.guide-hero h3,.guide-step b{color:#2c4637!important}.guide-symbol{color:#b65c41!important;text-shadow:none!important}
+.guide-hero p,.guide-step p{color:#5c7262!important}.guide-step{border-left-color:#d6ded2!important}
+.guide-step b{background:#eff0e8!important;border-radius:3px!important}
+.notice,.research-row,.skill-row,.astro-entry,.astro-card,.workshop-card,.mini-section{background:#f4f5ed!important;border:1px solid #d5ded1!important;border-radius:5px!important;color:#2f4536!important}
+.notice{color:#4d6355!important}.research-row strong,.skill-row strong{color:#26372e!important}
+.astro-view>h3{color:#263a2e!important}.astro-metrics{border-color:#c9d4c6!important}.astro-metrics>div{border-color:#d6ded2!important}
+.astro-metrics small{color:#61776a!important}.astro-metrics strong{color:#263c30!important}
+/* Modal is a short instruction sheet, not a cinematic popup. */
+.modal-backdrop{background:#1c292acc!important;backdrop-filter:blur(4px)}
+.modal{color:#2f4436!important;background:#fffdf8!important;border:1px solid #cad5c7!important;border-radius:8px!important;box-shadow:0 18px 60px #0004!important}
+.modal h2,.modal p,.modal strong{color:#294033!important}.modal-close{background:#e9eee3!important;color:#324739!important;border-radius:4px!important}
+.modal-art span{color:#b95d41!important;text-shadow:none!important}.modal-art:before{border-color:#b46c53!important;box-shadow:none!important}
+.discovery-banner,.toast{background:#f6f5eb!important;border:1px solid #c3d2c1!important;color:#284030!important;border-radius:6px!important;box-shadow:0 14px 40px #0004!important}
+.discovery-banner p{color:#577060!important}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #be6345!important;outline-offset:2px}
+@media (min-width:761px) and (max-width:1230px){.layout{grid-template-columns:minmax(230px,30%) minmax(360px,1fr)}}
+@media(max-width:760px){
+ html{scroll-padding-top:8px}
+ .app{max-width:520px;padding:9px 12px calc(83px + env(safe-area-inset-bottom))}
+ .top{height:52px;min-height:52px;margin-bottom:9px;padding-bottom:8px;border-color:#cbd3c7}
+ .brand{gap:9px}.brand-symbol{width:36px;height:36px}.brand-symbol span{font-size:17px!important}
+ .brand-title{gap:0}.brand-kicker{font-size:8px}.brand strong{font-size:18px!important;letter-spacing:.05em}.brand small{font-size:8px;letter-spacing:0}
+ .top-actions{gap:4px}.icon-btn,.soundtrack-switch{width:30px;height:31px;min-height:31px;font-size:12px}
+ .resourcebar{display:flex;flex-wrap:nowrap;border-radius:5px;margin-bottom:8px}
+ .resource,.resource.hero-resource{padding:8px 12px;min-height:61px;flex:1 1 50%;border-right:1px solid #d0d6ca!important}
+ .resource small{font-size:10px;white-space:nowrap}.resource strong{font-size:clamp(18px,5.2vw,24px)}
+ .resource.prestige-resource{border-top:1px solid #d0d6ca!important;flex-basis:100%}
+ .resourcebar:has(.prestige-resource:not([hidden])){flex-wrap:wrap}
+ .layout{display:flex;flex-direction:column;gap:0}
+ .left-panel,.right-panel{display:none;max-height:none;min-height:0}
+ .center-panel{display:block}
+ .stage{padding:14px 15px 15px;height:clamp(350px,55svh,470px);min-height:0;border-radius:6px!important}
+ .stage-label{padding-bottom:8px;font-size:10px}
+ .focus-toggle{font-size:10px;padding:5px 6px}
+ .center-title{padding:9px 3px 0!important}.center-title .eyebrow{font-size:9px!important}
+ .center-title h1{font-size:clamp(21px,6vw,25px);margin:6px 0!important}.center-title p{font-size:11px;line-height:1.4;max-width:270px}
+ .core-wrap{width:230px;height:clamp(155px,24svh,205px);transform:scale(.75);margin:-7px auto -11px}
+ .stage .core{width:130px;height:130px}.tap-hint{font-size:10px}
+ .tap-value{font-size:10px}.tap-value strong{font-size:13px}
+ .workshop-status{font-size:10px!important;padding:5px 9px!important}
+ .cosmos-whisper{display:none}.progress-zone{margin-top:9px}
+ .mission{min-height:68px;margin-top:8px;padding:10px 11px;display:grid;grid-template-columns:1fr auto;gap:8px}
+ .mission-heading{display:none}.mission-copy h3{font-size:12px!important}.mission-copy p{display:none}.mission-glyph{width:28px;height:28px}
+ .mission-foot{display:block}.mission-progress{display:none}.mission-action{height:34px;min-height:34px;font-size:10px;padding:0 9px}
+ .chronicle,.dashboard{display:none}
+ body[data-mobile-view="equipment"] .left-panel{display:block;width:100%}
+ body[data-mobile-view="equipment"] .center-panel,body[data-mobile-view="equipment"] .right-panel{display:none}
+ body[data-mobile-view="guide"] .right-panel{display:block;width:100%}
+ body[data-mobile-view="guide"] .center-panel{display:block}
+ body[data-mobile-view="guide"] .stage,body[data-mobile-view="guide"] .mission{display:none}
+ body[data-mobile-view="guide"] .chronicle,body[data-mobile-view="guide"] .dashboard{display:block}
+ body[data-mobile-view="research"] .right-panel,body[data-mobile-view="prestige"] .right-panel,body[data-mobile-view="skills"] .right-panel,body[data-mobile-view="workshop"] .right-panel,body[data-mobile-view="celestial"] .right-panel,body[data-mobile-view="explore"] .right-panel,body[data-mobile-view="civil"] .right-panel,body[data-mobile-view="laws"] .right-panel,body[data-mobile-view="challenge"] .right-panel,body[data-mobile-view="constellations"] .right-panel{display:block;width:100%}
+ body[data-mobile-view="research"] .center-panel,body[data-mobile-view="prestige"] .center-panel,body[data-mobile-view="skills"] .center-panel,body[data-mobile-view="workshop"] .center-panel,body[data-mobile-view="celestial"] .center-panel,body[data-mobile-view="explore"] .center-panel,body[data-mobile-view="civil"] .center-panel,body[data-mobile-view="laws"] .center-panel,body[data-mobile-view="challenge"] .center-panel,body[data-mobile-view="constellations"] .center-panel{display:none}
+ .right-panel .tabs{display:none}.side-body{padding:17px 16px}
+ .mobile-nav{height:calc(61px + env(safe-area-inset-bottom));background:#f7f5ed!important;border-top:1px solid #bdc8b8!important;box-shadow:0 -5px 20px #0e312a17!important;backdrop-filter:none!important;padding:5px 5px calc(4px + env(safe-area-inset-bottom));gap:0}
+ .mobile-nav button{color:#738374!important;border-right:0!important;min-width:57px;padding:4px 6px;gap:3px;background:transparent!important}
+ .mobile-nav button b{font-size:19px;line-height:1}.mobile-nav button span{font-size:10px}
+ .mobile-nav button.active{color:#9d472f!important;background:#eee9df!important;border-bottom:2px solid #b4563e!important;border-radius:4px 4px 0 0!important}
+ .feature-menu-fab{background:#e6e2d9!important;color:#34483a!important;border-color:#c7cfc2!important;box-shadow:none!important}
+ .toast{bottom:calc(77px + env(safe-area-inset-bottom))}
+ .focus-mode .stage{height:calc(100svh - 180px)}
+}
+@media(max-width:400px) and (max-height:730px){.stage{height:clamp(333px,52svh,365px)}.core-wrap{height:clamp(150px,23svh,174px);transform:scale(.69);margin:-8px auto -18px}.center-title h1{font-size:22px}.center-title{padding-top:6px!important}.mission{min-height:65px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+/* Final contrast and tactile control polish */
+.guide-hero h4,.guide-hero h4 strong,.guide-hero .guide-symbol,.guide-step strong{color:#284739!important;text-shadow:none!important}
+.guide-hero h4{font-size:15px!important;line-height:1.55}
+#discovery-title,.discovery-banner h3,.discovery-banner strong,.discovery-banner b{color:#2c4032!important}
+#discovery-detail{color:#546b5a!important}#discovery-glyph{color:#b25740!important}
+.toast,.discovery-banner{z-index:30!important}
+.facility button:not(:disabled),.facility .buy-button:not(:disabled){background:#b4563e!important;color:#fff!important;border-color:#b4563e!important}
+.facility button:disabled{background:#e4e9de!important;color:#6f7f74!important;border-color:#d3dbce!important}
+.side-body p,.notice,.astro-view p,.research-row p{color:#52685b!important}
+.side-body h4,.workshop-panel h4,.stellar-panel h4{color:#2d4437!important}
+#workshop-status{font-size:11px}
+/* No overdecorated glow cards or gratuitous neon in midgame screens. */
+.side-body [class*="hero"]:not(.guide-hero){box-shadow:none!important}
+@media(max-width:760px){.discovery-banner{left:14px!important;right:14px!important;max-width:calc(100vw - 28px)!important}}
+/* Desktop: a game scene and its workbench, not a three-column KPI dashboard. */
+@media(min-width:1231px){
+ .layout{grid-template-columns:minmax(580px,1.67fr) minmax(330px,.77fr);grid-template-areas:'play work' 'play notes';align-items:start;column-gap:18px;row-gap:14px}
+ .center-panel{grid-area:play;min-width:0}
+ .left-panel{grid-area:work;min-width:0;max-height:unset;min-height:0}
+ .right-panel{grid-area:notes;min-width:0;max-height:540px;min-height:0}
+ .stage{min-height:590px}.core-wrap{height:310px}
+ .left-panel .facility-list{max-height:310px;overflow:auto}
+ .right-panel .tabs{position:sticky;top:0;z-index:4}
+ .center-title{padding-top:24px!important}
+}
+
+/* V13.1: usable intermediate widths and stable touch targets */
+@media (min-width:761px) and (max-width:1230px){
+ .app{padding:16px 18px 35px}
+ .layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(255px,36%);grid-template-areas:"play work" "notes work";gap:14px;align-items:start}
+ .center-panel{grid-area:play;min-width:0}
+ .left-panel{grid-area:work;min-width:0;max-height:calc(100svh - 180px);min-height:0}
+ .right-panel{grid-area:notes;min-width:0;max-height:none;min-height:0}
+ .stage{min-height:540px}
+ .center-title h1{font-size:clamp(23px,2.6vw,30px)}
+}
+@media(max-width:760px){
+ .mobile-nav button{min-height:48px;touch-action:manipulation}
+ #core{touch-action:manipulation}
+ .top-actions{min-width:0}
+}
+@media(max-width:359px){
+ .app{padding-left:8px;padding-right:8px}
+ .top-actions{gap:2px}
+ .brand-title small,.brand-kicker{display:none}
+ .resource,.resource.hero-resource{padding:8px}
+ .stage{padding:11px}
+}

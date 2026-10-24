@@ -1,0 +1,33 @@
+/* Star-chart commissions and signal memory: observatory instrument aesthetic. */
+.constellation-intro{margin:.75rem 0 1rem;padding:1rem;border:1px solid rgba(182,164,121,.24);background:rgba(18,25,27,.64)}
+.constellation-summary{display:flex;align-items:baseline;justify-content:space-between;gap:.65rem;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.constellation-summary strong{font-size:1.4rem;color:#ead4a5}
+.constellation-card{border-top:1px solid rgba(191,184,160,.2);padding:1rem .1rem;display:grid;gap:.45rem}
+.constellation-card h4{margin:.15rem 0;color:#e8dfcc;font-size:1rem}
+.constellation-card p{margin:0;color:#bbc2bb;font-size:.84rem;line-height:1.5}
+.constellation-head{display:flex;justify-content:space-between;align-items:center;gap:.55rem}
+.constellation-head small{color:#b6a587;letter-spacing:.08em}
+.constellation-meta{display:flex;justify-content:space-between;gap:.3rem;font-size:.75rem;color:#bac0ba}
+.constellation-track{height:4px;background:#313b3b;overflow:hidden}
+.constellation-progress{height:100%;background:#c5ad7f;transition:width .25s}
+.constellation-card button{width:100%;margin-top:.35rem;min-height:42px}
+.signal-game{padding:1rem;border:1px solid rgba(197,173,127,.25);background:#141e21}
+.signal-game .signal-status{min-height:1.5em;font-weight:600;color:#e4d0a9;margin:.7rem 0}
+.signal-pads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:1rem 0}
+.signal-pad{min-height:78px;touch-action:manipulation;border:1px solid var(--padedge,#54686c);background:var(--padbg,#253137);border-radius:4px;color:#f2f0e7;font-size:1.2rem;font-weight:bold;transition:background .14s,filter .14s;cursor:pointer}
+.signal-pad[data-key="0"]{--padedge:#c7ab80;--padbg:#443b31}
+.signal-pad[data-key="1"]{--padedge:#82aa99;--padbg:#2d423c}
+.signal-pad[data-key="2"]{--padedge:#91a9c1;--padbg:#2d3b49}
+.signal-pad[data-key="3"]{--padedge:#ae92ad;--padbg:#403243}
+.signal-pad[disabled]{cursor:default;opacity:.65}
+.signal-pad.is-lit{background:var(--padedge);color:#11191a;filter:brightness(1.25);transform:scale(1.025)}
+.signal-score{font-size:.8rem;color:#bac5c4;line-height:1.6}
+@media (prefers-reduced-motion:reduce){.signal-pad,.constellation-progress{transition:none}.signal-pad.is-lit{transform:none}}
+@media(max-width:650px){.signal-game{padding:.85rem}.signal-pad{min-height:72px}.constellation-intro{padding:.8rem}}
+@media(max-width:760px){
+ body[data-mobile-view="constellations"] .right-panel{display:block;order:0;width:100%}
+ body[data-mobile-view="constellations"] .left-panel,body[data-mobile-view="constellations"] .center-panel{display:none}
+ body[data-mobile-view="constellations"] .right-panel .tabs{display:none}
+}
+.signal-game .row-end{display:flex;flex-wrap:wrap;gap:.5rem}
+.signal-game .row-end .action{flex:1 1 125px;min-width:0;padding:.65rem .45rem}
